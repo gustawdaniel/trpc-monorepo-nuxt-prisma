@@ -6,7 +6,8 @@ async function start() {
 
   // const t: "en" | "de"
   const tr = await t.translate.query({
-    to_lang: 'uk',
+
+    // to_lang: 'uk',
     from_lang: "de",
     from_text: "",
     provider: "google"
