@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { version, translate } from "#imports";
+import { version, translate, t } from "#imports";
 import { GirlName } from "trpc";
 
 async function start() {
@@ -11,8 +11,14 @@ async function start() {
   });
 
   // const t: "en" | "de"
-  const t = await translate({
+  const tr = await translate({
     lang: 'en'
+  });
+
+  // const versionFromClient: {version: string, enum: "a" | "b"}
+  const versionFromClient = await t.version.query({
+    nativeEnum: GirlName.Triss,
+    name: 'Triss'
   });
 
 

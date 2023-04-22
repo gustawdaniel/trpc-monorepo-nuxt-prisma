@@ -1,7 +1,7 @@
 import { AppRouter } from "trpc";
 import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
 
-const t = createTRPCProxyClient<AppRouter>({
+export const t = createTRPCProxyClient<AppRouter>({
   links: [
     httpBatchLink({
       url: "http://localhost:2022/trpc",
