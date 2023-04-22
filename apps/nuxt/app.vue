@@ -2,7 +2,8 @@
 import {version} from '#imports'
 
 async function start() {
-  // correct typing const v: {version: string}
+  // const v: {version: string, enum: string}
+  // now enum should be "a" | "b" but is string
   const v = await version();
 }
 </script>
