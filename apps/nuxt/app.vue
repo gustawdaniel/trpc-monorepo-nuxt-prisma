@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { version } from "#imports";
+import { version, translate } from "#imports";
 import { GirlName } from "trpc";
 
 async function start() {
@@ -9,6 +9,13 @@ async function start() {
     name: 'Triss',
     nativeEnum: GirlName.Triss
   });
+
+  // const t: "en" | "de"
+  const t = await translate({
+    lang: 'en'
+  });
+
+
 }
 </script>
 

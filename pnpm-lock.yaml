@@ -23,12 +23,20 @@ importers:
       '@types/node': 18.15.13
       nuxt: 3.4.2_@types+node@18.15.13
 
+  packages/database:
+    specifiers:
+      '@prisma/client': ^4.13.0
+    dependencies:
+      '@prisma/client': 4.13.0
+
   packages/trpc:
     specifiers:
       '@trpc/server': ^10.20.0
+      database: workspace:*
       zod: ^3.21.4
     dependencies:
       '@trpc/server': 10.21.1
+      database: link:../database
       zod: 3.21.4
 
 packages:
@@ -778,6 +786,23 @@ packages:
       - vti
       - vue-tsc
     dev: true
+
+  /@prisma/client/4.13.0:
+    resolution: {integrity: sha512-YaiiICcRB2hatxsbnfB66uWXjcRw3jsZdlAVxmx0cFcTc/Ad/sKdHCcWSnqyDX47vAewkjRFwiLwrOUjswVvmA==}
+    engines: {node: '>=14.17'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 4.13.0-50.1e7af066ee9cb95cf3a403c78d9aab3e6b04f37a
+    dev: false
+
+  /@prisma/engines-version/4.13.0-50.1e7af066ee9cb95cf3a403c78d9aab3e6b04f37a:
+    resolution: {integrity: sha512-fsQlbkhPJf08JOzKoyoD9atdUijuGBekwoOPZC3YOygXEml1MTtgXVpnUNchQlRSY82OQ6pSGQ9PxUe4arcSLQ==}
+    dev: false
 
   /@rollup/plugin-alias/5.0.0_rollup@3.20.7:
     resolution: {integrity: sha512-l9hY5chSCjuFRPsnRm16twWBiSApl2uYFLsepQYwtBuAxNMQ/1dJqADld40P0Jkqm65GRTLy/AC6hnpVebtLsA==}

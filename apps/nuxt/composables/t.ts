@@ -39,3 +39,8 @@ type RouterOutput = inferRouterOutputs<AppRouter>;
 export function version(args: RouterInput['version']): Promise<RouterOutput["version"]> {
   return t.version.query(args);
 }
+
+export function translate(args: RouterInput['translate']): Promise<RouterOutput["translate"]> {
+  return t.translate.query(args);
+}
+
