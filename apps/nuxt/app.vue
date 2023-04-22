@@ -2,9 +2,11 @@
 import {version} from '#imports'
 
 async function start() {
-  // const v: {version: string, enum: string}
-  // now enum should be "a" | "b" but is string
-  const v = await version();
+  // again it is correct, thanks to strict definition of result in trpc/src/index.ts
+  // const v: {version: string, enum: "a" | "b"}
+  const v = await version({
+    name: 'Triss'
+  });
 }
 </script>
 
